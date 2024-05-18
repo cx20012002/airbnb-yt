@@ -68,7 +68,26 @@ export function DeleteFormFavoriteButton() {
           className="bg-primary-foreground"
           type="submit"
         >
-          <Heart className="w-4 h-4 text-primary" fill='#e21c49' />
+          <Heart className="w-4 h-4 text-primary" fill="#e21c49" />
+        </Button>
+      )}
+    </>
+  );
+}
+
+export function ReservationSubmitButton() {
+  const { pending } = useFormStatus();
+  //check to is if the form is 
+
+  return (
+    <>
+      {pending ? (
+        <Button className="w-full" disabled>
+          <Loader2 className="w-4 h-4 animate-spin mr-2" />
+        </Button>
+      ) : (
+        <Button className="w-full" type="submit">
+          Make a Reservation!
         </Button>
       )}
     </>

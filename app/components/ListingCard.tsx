@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { useContries } from '../lib/getCountries';
 import Link from 'next/link';
 import { AddToFavoriteButton, DeleteFormFavoriteButton } from './SubmitButtons';
-import prisma from '../lib/db';
 import { DeleteFormFavorite, addToFavorate } from '../actions';
 
 interface iAppProps {
@@ -62,7 +61,7 @@ export function ListingCard({
         )}
       </div>
 
-      <Link href={'/'} className="mt-2">
+      <Link href={`/home/${homeId}`} className="mt-2">
         <h3 className="font-medium text-base">
           {country?.flag} {country?.label} / {country?.region}
         </h3>
